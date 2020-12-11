@@ -71,5 +71,10 @@ class PostController extends Controller
         $post->delete();
         return back()->with("post_delete","Record has been deleted");
     }
+    public function showpost()
+    {
+        $posts = Post::all();
+        return view('welcome', compact('posts'));
+    }
 
 }
